@@ -32,3 +32,6 @@ If you using NPM 3.x, these will not be automatically installed.
 
 - jasmine-core *
 - phantomjs-prebuilt ^1.9
+
+# License
+[MIT](https://opensource.org/licenses/MIT)
