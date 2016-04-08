@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DEMO</title>
+</head>
+<style>
+  .box {
+    border: 1px solid;
+  }
+</style>
+<body>
+  <app>
+    <p>点击黑框外面会隐藏 dropdown 元素</p>
+    <div v-clickoutside="show = false" class="box">
+      <button @click="show = true">click me</button>
+      <div v-show="show">dropdown</div>
+    </div>
+  </app>
+</body>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.min.js"></script>
+  <script src="./../build/index.js"></script>
+  <script>
+    Vue.use(VueClickOutside)
+
+    new Vue({
+      el: 'app',
+      data: function () {
+        return {
+          show: true
+        }
+      }
+    })
+  </script>
+</html>
