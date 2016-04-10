@@ -21,7 +21,7 @@ export default {
   },
 
   unbind() {
-    E.on(document, this.trigger);
+    E.off(document, this.trigger);
   },
 
   install(Vue) {

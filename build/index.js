@@ -236,7 +236,7 @@
       });
     },
     unbind: function unbind() {
-      E.on(document, this.trigger);
+      E.off(document, this.trigger);
     },
     install: function install(Vue) {
       Vue.directive('clickoutside', {
