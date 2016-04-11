@@ -1,5 +1,6 @@
 # vue-clickoutside
-A Vue directive about listener a click outside an element.
+[DEPRECATED] I didn't know it was already [vue-clickaway](https://github.com/simplesmiler/vue-clickaway) : (
+
 
 # Installation
 ```shell
