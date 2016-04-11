@@ -1,6 +1,3 @@
-import E from 'oui-dom-events';
-import uid from 'uid';
-
 /**
  * v-clickoutside
  * @desc 点击元素外面才会触发的事件
@@ -11,38 +8,22 @@ import uid from 'uid';
  */
 export default {
   bind() {
-    this.trigger = `click.clickoutside.${uid()}`;
-
-    E.on(document, this.trigger, e => {
-      if (!this.isParentElement(this.el, e.target) && this.vm) {
+    this.handler = (e) => {
+      if (this.vm && !this.el.contains(e.target)) {
         this.vm.$eval(this.expression);
       }
-    });
+    };
+    document.addEventListener('click', this.handler);
   },
 
   unbind() {
-    E.off(document, this.trigger);
+    document.removeEventListener('click', this.handler);
   },
 
   install(Vue) {
     Vue.directive('clickoutside', {
       bind: this.bind,
-      unbind: this.unbind,
-      isParentElement: this.isParentElement
+      unbind: this.unbind
     });
-  },
-
-  isParentElement(parentElement, element) {
-    while (
-        element !== null &&
-        element !== undefined &&
-        element.tagName &&
-        element.tagName.toUpperCase() !== 'BODY') {
-      if (element === parentElement) {
-        return true;
-      }
-      element = element.parentNode;
-    }
-    return false;
   }
 };

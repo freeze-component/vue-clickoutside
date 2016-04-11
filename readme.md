@@ -1,5 +1,7 @@
 # vue-clickoutside
-[DEPRECATED] I didn't know it was already [vue-clickaway](https://github.com/simplesmiler/vue-clickaway) : (
+> make a click outside event.
+
+Similar [vue-clickaway](https://github.com/simplesmiler/vue-clickaway), but more simpler. :P
 
 
 # Installation

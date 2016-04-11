@@ -1,6 +1,6 @@
 {
   "name": "vue-clickoutside",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A Vue directive about listener a click outside an element.",
   "main": "build/index.js",
   "scripts": {
@@ -31,13 +31,11 @@
     "karma-jasmine": "^0.3.8",
     "karma-phantomjs-launcher": "^1.0.0",
     "karma-rollup-preprocessor": "^2.0.1",
-    "oui-dom-events": "^0.2.1",
     "rollup": "^0.25.8",
     "rollup-plugin-babel": "^2.4.0",
     "rollup-plugin-commonjs": "^2.2.1",
     "rollup-plugin-env": "^0.21.2",
     "rollup-plugin-node-resolve": "^1.5.0",
-    "uid": "0.0.2",
     "vue": "^1.0.21"
   }
 }
