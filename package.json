@@ -1,6 +1,6 @@
 {
   "name": "vue-clickoutside",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "A Vue directive about listener a click outside an element.",
   "main": "build/index.js",
   "files": [
