@@ -3,6 +3,10 @@
   "version": "0.0.4",
   "description": "A Vue directive about listener a click outside an element.",
   "main": "build/index.js",
+  "files": [
+    "src",
+    "build"
+  ],
   "scripts": {
     "test": "npm run build && karma start",
     "build": "rollup -c",
