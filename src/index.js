@@ -7,6 +7,8 @@
  * ```
  */
 export default {
+  id: 'clickoutside',
+
   bind() {
     this.handler = (e) => {
       if (this.vm && !this.el.contains(e.target)) {
