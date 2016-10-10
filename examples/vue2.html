@@ -10,24 +10,36 @@
   }
 </style>
 <body>
-  <app>
+  <div id="app">
     <p>点击黑框外面会隐藏 dropdown 元素</p>
-    <div v-clickoutside:touchstart="show = false" class="box">
-      <button @click="show = true">click me</button>
+    <div v-clickoutside="show = false" class="box">
+      <button @click="open">click me</button>
       <div v-show="show">dropdown</div>
+
+      {{ show }}
     </div>
-  </app>
+  </div>
 </body>
-  <script src="./../node_modules/vue/dist/vue.min.js"></script>
+  <script src="https://npmcdn.com/vue@2.0.0-beta.5/dist/vue.js"></script>
   <script src="./../dist/clickoutside.js"></script>
   <script>
     Vue.use(VueClickOutside)
 
     new Vue({
-      el: 'app',
+      el: '#app',
       data: function () {
         return {
           show: true
+        }
+      },
+      methods: {
+        close() {
+          this.show = false
+        },
+        open() {
+          console.log(this.show)
+
+          this.show = true
         }
       }
     })

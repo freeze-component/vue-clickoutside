@@ -1,8 +1,9 @@
-clean:
-	rm -rf build
+.PHONY: dist
 
-build: clean
-	npm run build
+default: dist
+
+dist:
+	npm run dist
 
 test:
 	npm test

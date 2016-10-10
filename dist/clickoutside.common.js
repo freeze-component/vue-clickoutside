@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * v-clickoutside
  * @desc 点击元素外面才会触发的事件
@@ -6,26 +8,28 @@
  * <div v-element-clickoutside="show = false">
  * ```
  */
-export default {
+var index = {
   id: 'clickoutside',
 
-  bind() {
-    this.handler = (e) => {
-      if (this.vm && !this.el.contains(e.target)) {
-        this.vm.$eval(this.expression);
+  bind: function bind() {
+    var _this = this;
+
+    this.handler = function (e) {
+      if (_this.vm && !_this.el.contains(e.target)) {
+        _this.vm.$eval(_this.expression);
       }
     };
     document.addEventListener(this.arg || 'click', this.handler);
   },
-
-  unbind() {
+  unbind: function unbind() {
     document.removeEventListener(this.arg || 'click', this.handler);
   },
-
-  install(Vue) {
+  install: function install(Vue) {
     Vue.directive('clickoutside', {
       bind: this.bind,
       unbind: this.unbind
     });
   }
 };
+
+module.exports = index;
